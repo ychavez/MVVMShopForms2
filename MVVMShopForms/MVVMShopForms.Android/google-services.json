@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "810470118833",
+    "project_id": "shopformsyael",
+    "storage_bucket": "shopformsyael.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:810470118833:android:1d6687775e553df88d9990",
+        "android_client_info": {
+          "package_name": "com.companyname.mvvmshopforms"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "810470118833-k1p1qtmk2o8orooqfp02e6qn7bi9loi0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnhg8UZFFOaHArNuG94fKb7csykGeveb0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "810470118833-k1p1qtmk2o8orooqfp02e6qn7bi9loi0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
