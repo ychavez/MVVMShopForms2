@@ -7,6 +7,6 @@ namespace MVVMShopForms.Data
     public static class Constants
     {
         public const string ServiceUrlBase
-            = "https://productsapidw.azurewebsites.net/api";
+            = "https://productsapidw.azurewebsites.net/api/";
     }
 }

@@ -12,7 +12,7 @@ namespace MVVMShopForms.Data
 
         private RestService _RestService;
 
-        public Context() => new RestService(Constants.ServiceUrlBase);
+        public Context() => _RestService = new RestService(Constants.ServiceUrlBase);
 
         public Context(string token) =>
             _RestService = new RestService(Constants.ServiceUrlBase, token);

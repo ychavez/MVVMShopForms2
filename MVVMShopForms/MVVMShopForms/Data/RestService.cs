@@ -46,7 +46,6 @@ namespace MVVMShopForms.Data
             }
             catch (Exception ex)
             {
-
                 Debug.WriteLine($"Error {ex.Message}");
             }
 

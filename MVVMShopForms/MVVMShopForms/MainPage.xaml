@@ -1,24 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MVVMShopForms.MainPage">
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu">
 
-    <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
-    </StackLayout>
+            <Grid BackgroundColor="Transparent">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="200"/>
+                </Grid.RowDefinitions>
+                <Grid>
+                    <!--<Image Source="Images/profile.png" Aspect="Fill"/>-->
+                    <StackLayout Padding="0,0,0,0" HorizontalOptions="CenterAndExpand"
+                                 VerticalOptions="CenterAndExpand">
 
-</ContentPage>
+                        <Image Source="Images/profile.png" Aspect="AspectFit" 
+                               WidthRequest="85" HeightRequest="85"/>
+                        <Label Text="Catalogo de productos" FontSize="Large"/>
+                    </StackLayout>
+                </Grid>
+                <StackLayout Margin="20,0,20,0" Grid.Row="1" Spacing="15">
+                    <ListView x:Name="navigationDrawerList" RowHeight="60"
+                              SeparatorVisibility="None" >
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Image Source="{Binding Icon}" WidthRequest="40" 
+                                               HeightRequest="40" VerticalOptions="Center"/>
+                                        <Label Text="{Binding Title}"
+                                               FontSize="Medium" VerticalOptions="Center"/>
+
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+
+
+
+
+                </StackLayout>
+                
+                
+            </Grid>
+            
+        </ContentPage>
+
+    </MasterDetailPage.Master>
+
+</MasterDetailPage>
