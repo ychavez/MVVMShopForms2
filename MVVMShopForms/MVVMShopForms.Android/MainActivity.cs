@@ -6,6 +6,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Firebase.Messaging;
+using Firebase.Iid;
 
 namespace MVVMShopForms.Droid
 {
@@ -14,8 +16,14 @@ namespace MVVMShopForms.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+
+            string token = FirebaseInstanceId.Instance.Token;
+            FirebaseMessaging.Instance.SubscribeToTopic("Bicicletas");
+            
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
+
+
 
             base.OnCreate(savedInstanceState);
 

@@ -8,9 +8,13 @@ namespace MVVMShopForms.Droid
     public class MyFirebaseMessagingService : FirebaseMessagingService
     {
 
-        public override void OnMessageReceived(RemoteMessage p0)
+        public override void OnMessageReceived(RemoteMessage message)
         {
-            base.OnMessageReceived(p0);
+
+            var data = message.Data;
+            base.OnMessageReceived(message);
+            new NotificationHelper().CreateNotification(message.GetNotification().Title, message.GetNotification().Body);
+
         }
     }
 }
