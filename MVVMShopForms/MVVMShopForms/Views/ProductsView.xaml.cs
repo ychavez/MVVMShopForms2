@@ -17,7 +17,8 @@ namespace MVVMShopForms.Views
         public ProductsView()
         {
             InitializeComponent();
-            BindingContext = viewModel = new ProductsViewModel();
+            BindingContext = viewModel = new ProductsViewModel() { Navigation = Navigation };
+            
         }
     }
 }

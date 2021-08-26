@@ -1,12 +1,12 @@
 ﻿using MVVMShopForms.Data;
 using MVVMShopForms.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using MVVMShopForms.ViewModels.Base;
+using System.Collections.ObjectModel;
+
 
 namespace MVVMShopForms.ViewModels
 {
-    public class ProductsViewModel
+    public class ProductsViewModel: BaseViewModel
     {
         private Context _Context;
         public ProductsViewModel()
@@ -14,12 +14,16 @@ namespace MVVMShopForms.ViewModels
             _Context = new Context();
             LoadProducts();
         }
-        public List<Product> Products = new List<Product> { new Product { Description = "Prueba" } };
+        private ObservableCollection<Product> _Products = new ObservableCollection<Product>();
+
+        public ObservableCollection<Product> Products
+        { get => _Products; set { SetProperty(ref _Products, value); } }
 
         public async void LoadProducts() 
         {
-            Products = new List<Product>();
-            Products.AddRange(await _Context.GetProducts());
+            var products = await _Context.GetProducts();
+            Products = new ObservableCollection<Product>(products);
+            
         }
     }
 }

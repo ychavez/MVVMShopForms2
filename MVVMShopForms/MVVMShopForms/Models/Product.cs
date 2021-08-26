@@ -1,13 +1,24 @@
-﻿namespace MVVMShopForms.Models
+﻿using MVVMShopForms.Models.Base;
+
+namespace MVVMShopForms.Models
 {
-    public class Product
+    public class Product : BaseModel
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public string  Color { get; set; }
-        public decimal Price { get; set; }
-        public byte[] Picture { get; set; }
+        private int _Id;
+        public int Id { get => _Id; set => SetProperty(ref _Id, value); }
+       
+        
+        
+        private string _Name;
+        public string Name { get => _Name; set => SetProperty(ref _Name, value); }
+        private string _Description;
+        public string Description { get => _Description; set => SetProperty(ref _Description, value); }
+        private string _Color;
+        public string Color { get => _Color; set => SetProperty(ref _Color, value); }
+        private decimal _Price;
+        public decimal Price { get => _Price; set => SetProperty(ref _Price, value); }
+        private byte[] _Picture;
+        public byte[] Picture { get => _Picture; set => SetProperty(ref _Picture, value); }
 
     }
 }
