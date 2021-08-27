@@ -23,7 +23,7 @@
                     <Entry Text="{Binding Product.Color}" FontSize="Small"/>
 
                     <Label Text="Precio" FontSize="Medium"/>
-                    <Entry Text="{Binding Product.Precio}" Keyboard="Numeric" FontSize="Small"/>
+                    <Entry Text="{Binding Product.Price}" Keyboard="Numeric" FontSize="Small"/>
 
                     <Button x:Name="btnFoto" Text="Tomar foto"/>
                     <Button x:Name="btnSeleccionar" Text="Seleccionar foto"/>
