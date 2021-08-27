@@ -52,6 +52,13 @@ namespace MVVMShopForms.Data
             return TData;
         }
 
+        public bool CheckToken(string token)
+        {
+            _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            var reponse = _client.GetAsync("Account/Check").GetAwaiter().GetResult();
+
+            return reponse.IsSuccessStatusCode;
+        }
 
         public async Task<string> PostAsync<T>(T data, string url)
         {

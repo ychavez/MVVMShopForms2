@@ -40,5 +40,7 @@ namespace MVVMShopForms.Data
 
         }
 
+        public bool CheckToken(string token) => _RestService.CheckToken(token);
+
     }
 }

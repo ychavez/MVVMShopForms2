@@ -6,12 +6,12 @@
         <ToolbarItem x:Name="btnDelete" Text="Borrar" Command="{Binding DeleteCommand}"/>
         <ToolbarItem x:Name="btnSave" Text="Guardar" Command="{Binding SaveCommand}"/>
     </ContentPage.ToolbarItems>
-    
     <ContentPage.Content>
         <ScrollView Orientation="Both" x:Name="scrollView">
             <ScrollView.Content>
                 <StackLayout>
                     <!--imagen-->
+                   <Image x:Name="ImgMain" Source="{Binding ImgSource}" HorizontalOptions="Center" VerticalOptions="Center"/>
 
                     <Label Text="Nombre" FontSize="Medium"/>
                     <Entry Text="{Binding Product.Name}" FontSize="Small"/>
@@ -25,7 +25,7 @@
                     <Label Text="Precio" FontSize="Medium"/>
                     <Entry Text="{Binding Product.Price}" Keyboard="Numeric" FontSize="Small"/>
 
-                    <Button x:Name="btnFoto" Text="Tomar foto"/>
+                    <Button x:Name="btnFoto" Text="Tomar foto" Command="{Binding UploadPhoto}"/>
                     <Button x:Name="btnSeleccionar" Text="Seleccionar foto"/>
 
                     <ActivityIndicator IsRunning="{Binding IsBusy}"/>
