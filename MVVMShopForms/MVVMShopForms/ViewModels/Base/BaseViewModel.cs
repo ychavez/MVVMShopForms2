@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -8,7 +6,11 @@ namespace MVVMShopForms.ViewModels.Base
 {
     public class BaseViewModel : ObservableObject, INavigation
     {
+        private bool isBusy = false;
 
+        public bool IsBusy { get => isBusy; set => SetProperty(ref isBusy, value); }
+
+        #region Navigation
         private INavigation _navigation;
 
         public INavigation Navigation { get => _navigation; set => _navigation = value; }
@@ -18,7 +20,9 @@ namespace MVVMShopForms.ViewModels.Base
 
 
         public IReadOnlyList<Page> ModalStack => Navigation?.ModalStack;
+        
 
+    
         public IReadOnlyList<Page> NavigationStack => Navigation?.NavigationStack;
 
         public void InsertPageBefore(Page page, Page before)
@@ -43,7 +47,7 @@ namespace MVVMShopForms.ViewModels.Base
             var task = _navigation?.PopModalAsync();
             return task != null ? await task : await Task.FromResult(null as Page);
         }
-
+       
         public async Task<Page> PopModalAsync(bool animated)
         {
             var task = _navigation?.PopModalAsync(animated);
@@ -96,5 +100,6 @@ namespace MVVMShopForms.ViewModels.Base
         {
             _navigation?.RemovePage(page);
         }
+        #endregion
     }
 }

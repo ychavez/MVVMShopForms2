@@ -11,7 +11,7 @@ namespace MVVMShopForms
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new ProductsView());
+            MainPage = new MainPage();
         }
 
         protected override void OnStart()

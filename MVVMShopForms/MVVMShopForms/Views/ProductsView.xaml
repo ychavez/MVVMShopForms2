@@ -2,11 +2,18 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MVVMShopForms.Views.ProductsView">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="btnAdd" Text="Agregar" Command="{Binding AddCommand}"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
-        <ListView x:Name="ProductList" >
+        <ListView x:Name="ProductList" ItemsSource="{Binding Products}" HasUnevenRows="true" 
+                  IsPullToRefreshEnabled="True" RefreshCommand="{Binding Refresh}" 
+                  IsRefreshing="{Binding IsBusy}" ItemTapped="ProductList_ItemTapped" >
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Padding="10" RowSpacing="10" ColumnSpacing="10">
+                    <ViewCell>
+                        <Grid Padding="10" RowSpacing="10" ColumnSpacing="10">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
@@ -15,9 +22,10 @@
                         </Grid.ColumnDefinitions>
                         <Image HeightRequest="66" HorizontalOptions="CenterAndExpand" Aspect="AspectFill"
                                WidthRequest="66" Grid.RowSpan="2" ></Image>
-                        <Label Grid.Column="1" Text="{Binding Name}" TextColor="Blue" FontSize="24"/>
-                        <Label Grid.Column="1" Text="{Binding Description}" TextColor="Gray" FontSize="18"/>
-                    </Grid>
+                        <Label Grid.Column="1" Grid.Row="0" Text="{Binding Name}" TextColor="Blue" FontSize="24"/>
+                        <Label Grid.Column="1" Grid.Row="1" Text="{Binding Description}" TextColor="Gray" FontSize="18"/>
+                       </Grid>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

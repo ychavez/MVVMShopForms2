@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVVMShopForms.Views.ProductItemView">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="btnDelete" Text="Borrar" Command="{Binding DeleteCommand}"/>
+        <ToolbarItem x:Name="btnSave" Text="Guardar" Command="{Binding SaveCommand}"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <ScrollView Orientation="Both" x:Name="scrollView">
+            <ScrollView.Content>
+                <StackLayout>
+                    <!--imagen-->
+
+                    <Label Text="Nombre" FontSize="Medium"/>
+                    <Entry Text="{Binding Product.Name}" FontSize="Small"/>
+
+                    <Label Text="Drescripcion" FontSize="Medium"/>
+                    <Entry Text="{Binding Product.Description}" FontSize="Small"/>
+
+                    <Label Text="Color" FontSize="Medium"/>
+                    <Entry Text="{Binding Product.Color}" FontSize="Small"/>
+
+                    <Label Text="Precio" FontSize="Medium"/>
+                    <Entry Text="{Binding Product.Precio}" Keyboard="Numeric" FontSize="Small"/>
+
+                    <Button x:Name="btnFoto" Text="Tomar foto"/>
+                    <Button x:Name="btnSeleccionar" Text="Seleccionar foto"/>
+
+                    <ActivityIndicator IsRunning="{Binding IsBusy}"/>
+
+
+                </StackLayout>
+            </ScrollView.Content>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
