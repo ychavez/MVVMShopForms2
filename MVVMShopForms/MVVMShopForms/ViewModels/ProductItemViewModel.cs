@@ -22,7 +22,7 @@ namespace MVVMShopForms.ViewModels
             Product = product ?? new Product();
             SaveCommand = new Command(Save);
             DeleteCommand = new Command(Delete);
-            _Context = new Context();
+            _Context = new Context(Constants.ServiceToken);
             IsBusy = false;
         }
         private async void Save() 

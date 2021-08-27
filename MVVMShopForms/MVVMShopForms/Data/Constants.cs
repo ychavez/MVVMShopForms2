@@ -8,5 +8,6 @@ namespace MVVMShopForms.Data
     {
         public const string ServiceUrlBase
             = "https://productsapidw.azurewebsites.net/api/";
+        public static string ServiceToken;
     }
 }

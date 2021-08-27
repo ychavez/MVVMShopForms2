@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVVMShopForms.Views.Login">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Usuario"/>
+            <Entry Keyboard="Email" Placeholder="Usuario" Text="{Binding User.Email}"/>
+
+            <Label Text="Password"/>
+            <Entry IsPassword="True" Placeholder="Password" Text="{Binding User.Password}"/>
+
+            <Button BackgroundColor="Navy" Text="Login"  Command="{Binding Login}"/>
+
+            <ActivityIndicator IsRunning="{Binding IsBusy}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

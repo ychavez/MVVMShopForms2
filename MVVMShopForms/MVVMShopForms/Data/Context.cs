@@ -8,7 +8,7 @@ namespace MVVMShopForms.Data
 {
     public class Context
     {
-        
+
 
         private RestService _RestService;
 
@@ -23,11 +23,15 @@ namespace MVVMShopForms.Data
         public async Task AddProduct(Product product)
             => await _RestService.PostAsync(product, "Products");
 
-        public async Task UpdateProduct(Product product) 
+        public async Task UpdateProduct(Product product)
         {
             if (product.Id != 0)
-                await _RestService.PutDataAsync(product, "Products", product.Id); 
+                await _RestService.PutDataAsync(product, "Products", product.Id);
         }
+
+        public async Task<string> Login(Login user)
+              => await _RestService.PostAsync<Login>(user, "Account/Login");
+
 
         public async Task DeleteProduct(Product product)
         {

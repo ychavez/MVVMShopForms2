@@ -16,7 +16,7 @@ namespace MVVMShopForms.ViewModels
         public ICommand Refresh { get; set; }
         public ProductsViewModel()
         {
-            _Context = new Context();
+            _Context = new Context(Constants.ServiceToken);
             LoadProducts();
             AddCommand = new Command(Add);
             Refresh = new Command(LoadProducts);

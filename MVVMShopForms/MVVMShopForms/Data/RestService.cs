@@ -53,7 +53,7 @@ namespace MVVMShopForms.Data
         }
 
 
-        public async Task PostAsync<T>(T data, string url)
+        public async Task<string> PostAsync<T>(T data, string url)
         {
             var json = JsonConvert.SerializeObject(data);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
@@ -64,6 +64,8 @@ namespace MVVMShopForms.Data
                 throw new Exception(await response.Content.ReadAsStringAsync());
 
             }
+
+            return await response.Content.ReadAsStringAsync();
         }
 
         public async Task PutDataAsync<T>(T data, string url, int id) 
