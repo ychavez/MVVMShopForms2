@@ -17,7 +17,7 @@
                     <Entry Text="{Binding Product.Name}" FontSize="Small"/>
 
                     <Label Text="Drescripcion" FontSize="Medium"/>
-                    <Entry Text="{Binding Product.Description}" FontSize="Small"/>
+                    <Entry Text="{Binding Product.Description}"  FontSize="Small"/>
 
                     <Label Text="Color" FontSize="Medium"/>
                     <Entry Text="{Binding Product.Color}" FontSize="Small"/>
@@ -26,7 +26,7 @@
                     <Entry Text="{Binding Product.Price}" Keyboard="Numeric" FontSize="Small"/>
 
                     <Button x:Name="btnFoto" Text="Tomar foto" Command="{Binding UploadPhoto}"/>
-                    <Button x:Name="btnSeleccionar" Text="Seleccionar foto"/>
+                    <Button x:Name="btnSeleccionar" Text="Seleccionar foto" Command="{Binding PhotoFromFile}"/>
 
                     <ActivityIndicator IsRunning="{Binding IsBusy}"/>
 
